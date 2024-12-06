@@ -7,14 +7,14 @@
     border: none;
     outline: none;
     scroll-behavior: smooth;
-    font-family: Arial;
+    font-family: Gowun Batang, Arial;
 }
 :root{
     --text-color: #fff;
     --bg-color: #000;
-    --main-color: #ffa343;
+    --main-color: #c79231;
 
-    --h1-font: 6rem;
+    --h1-font: 4rem;
     --h2-font: 3rem;
     --p-font: 1rem;
 }
@@ -44,7 +44,7 @@ header{
     font-weight: 700;
 }
 
-span{
+header span{
     color: var(--main-color);
 }
 
@@ -66,8 +66,8 @@ span{
     text-underline-offset: 10px;
 }
 
-section{
-    padding: 70px 17% 60px;
+.home{
+    padding: 70px 10% 60px;
     height: 100vh;
     width: 100%;
     background-image: linear-gradient(to left, rgba(0,0,0,0.6), rgba(0,0,0,0.3)), url(../img/background_main.jpg);
@@ -79,7 +79,7 @@ section{
 }
 
 .home-text h5{
-    font-size: 18px;
+    font-size: 20px;
     font-weight: 600;
     margin-bottom: 10px;
     text-transform: uppercase;
@@ -123,3 +123,72 @@ section{
     background-image: none;
 }
 
+header.sticky{
+    padding: 8px 17%;
+    background: transparent;
+    backdrop-filter: blur(35px);
+}
+
+.holiday{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    align-items: center;
+    gap: 9rem;
+}
+
+section{
+    padding: 70px 10% 60px;
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.holiday img{
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+
+.holiday-text h5{
+    font-size: 22px;
+    font-weight: 600;
+    color: var(--main-color);
+    text-transform: uppercase;
+    letter-spacing: 6px;
+    margin-bottom: 20px;
+}
+
+.holiday-text h2{
+    font-size: var(--h2-font);
+    font-weight: 800;
+    line-height: 1.2;
+    margin-bottom: 25px;
+}
+
+.holiday-text p{
+    font-size: var(--p-font);
+    font-weight: 500;
+    line-height: 30px;
+    color: #ffffffab;
+    margin-bottom: 35px;
+}
+.schedule {
+    margin: 50px auto;
+    max-width: 600px;
+  }
+  .schedule p {
+    display: flex;
+    justify-content: space-between;
+    margin: 15px 0; /* 위아래 간격 */
+    padding: 10px;
+    font-size: 1.2em;
+    border-bottom: 1px solid var(--main-color); /* 항목 구분선 */
+  }
+
+  .footer{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, auto));
+    gap: 4rem;
+  }
