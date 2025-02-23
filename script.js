@@ -1,5 +1,14 @@
-const header = document.querySelector("header");
+let slideIndex = 0;
 
-window.addEventListener("scroll", function(){
-    header.classList.toggle("sticky", window.scrollY > 60)
-});
+    function showSlides() {
+        let slides = document.getElementsByClassName("mySlides");
+        for (let i = 0; i < slides.length; i++) {
+            slides[i].style.display = "none";
+        }
+        slideIndex++;
+        if (slideIndex > slides.length) {slideIndex = 1}
+        slides[slideIndex-1].style.display = "block";
+        setTimeout(showSlides, 4000); // 2초마다 슬라이드 전환
+    }
+
+    showSlides();
