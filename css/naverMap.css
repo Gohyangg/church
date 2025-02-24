@@ -1,0 +1,47 @@
+.naverMap .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+  }
+  /* 제목 영역 */
+  .title-area {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-bottom: 2px solid #e7f125;
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+  }
+  
+  .title-area h1 {
+    font-size: 2em;
+    margin: 0;
+  }
+  /* 내용 영역 */
+  .content-area {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+  }
+  .info-area {
+    flex: 1 1 300px;
+    padding: 20px;
+  }
+  .info-area p {
+    margin: 10px 0;
+    font-size: 1.1em;
+  }
+  .map-area {
+    flex: 2 1 500px;
+    height: 500px;
+    margin: 20px;
+  }
+  /* 반응형 처리 */
+  @media (max-width: 768px) {
+    .content-area {
+      flex-direction: column;
+    }
+    .map-area {
+      margin: 20px 0;
+    }
+  }
