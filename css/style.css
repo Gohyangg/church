@@ -54,7 +54,7 @@ header > li {
   
   .submenu > li {
     line-height: 50px;
-    background-color: #f3f4e2;
+    background-color: #ffffff;
   }
   
   .submenu {
@@ -62,9 +62,16 @@ header > li {
     overflow: hidden;
   }
 
+  .submenu a {
+    color: #8f8f8f; /* 원하는 회색으로 설정 */
+  }
+  .submenu a:hover {
+    color: #000000; /* 원하는 회색으로 설정 */
+  }
   header > li:hover {
-    background-color: #eff1c5;
+    background-color: #ffffff;
     transition-duration: 0.5s;
+    border-bottom: 2px solid #ccc;
   }
   
   header > li:hover .submenu {
@@ -121,7 +128,7 @@ header > li {
 .holiday-text p span {
     display: table-cell;
     padding: 1.8rem;
-    border-bottom: 1px solid #ddd;
+    border-bottom: 2px solid #ddd;
 }
 
 .footer {
