@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>고향교회 위치</title>
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <!-- 네이버 지도 API -->
+    <script type="text/javascript" src="https://openapi.naver.com/openapi/v3/maps.js?clientId=5l9vh7sjrh"></script>
+    <style>
+        #map {
+            width: 100%;
+            height: 400px;
+        }
+    </style>
+    </head>
+    <body>
+        <header>
+            <!--상단 로고 -->
+                <a href="#"><img src="img/gohyangch_logo.png" alt=""></a>
+            <!--상단 메뉴바 -->
+              <li>
+                <a href="#" class="navbarA">교회소개</a>
+                <ul class="submenu">
+                  <li><a href="#">인사말</a></li>
+                  <li><a href="#">교회비전</a></li>
+                  <li><a href="#">오시는 길</a></li>
+    
+                </ul>
+              </li>
+              <li>
+                <a href="#" class="navbarA">예배</a>
+                <ul class="submenu">
+                  <li><a href="#">주일설교</a></li>
+                  <li><a href="#">수요예배</a></li>
+                  <li><a href="#">찬양팀</a></li>
+    
+                </ul>
+              </li>
+              <li>
+                <a href="#" class="navbarA">안내</a>
+                <ul class="submenu">
+                  <li><a href="#">예배안내</a></li>
+                  <li><a href="#"></a></li>
+                  <li><a href="#">오시는 길</a></li>
+    
+                </ul>
+              </li>
+              <li>
+                <a href="#" class="navbarA">소식</a>
+                <ul class="submenu">
+                  <li><a href="#">submenu01</a></li>
+                  <li><a href="#">submenu02</a></li>
+                  <li><a href="#">submenu03</a></li>
+                </ul>
+              </li>
+        </header>
+
+
+        <section>
+            <h1>우리 교회 위치</h1>
+            <div id="map"></div>
+            <script type="text/javascript">
+                // 네이버 지도 API가 로딩되면 실행되는 함수
+                var mapOptions = {
+                    center: new naver.maps.LatLng(37.5665, 126.9780), // 서울시청 좌표 (교회 위치에 맞게 수정)
+                    zoom: 10
+                };
+                var map = new naver.maps.Map('map', mapOptions);
+            </script>
+        </section>
+
+
+        <section class="footer">
+            <div class="footer-box">
+                <h3>02&#41;872-0788-9</h3>
+                <p>전화가능시간 : 09~16시 </p>
+            </div>
+            <div class="footer-box">
+                    <p>대표: 엄상일</p>
+                    <p>주소: 대학동 ~길 ~~</p>
+                    <p>FAX. 02&#41;872-5729</p>
+                    <p>Email&#41; gohyangch.gmail.com</p>
+            </div>
+        </section>
+    </body>
+</html>
