@@ -23,7 +23,7 @@
 .img-slide {
     display: block;
     width: 90%;
-    height: 900px;
+    height: 580px;
     margin: 0 auto;
 }
 header{
@@ -33,14 +33,14 @@ header{
 
 }
 header img{
-    width: 50%;
+    width: 35%;
 }
 .navbar{
     display: flex;
 }
 .navbarA{
-    font-weight: 600;
-    font-size: 23px;
+    font-weight: 548;
+    font-size: 18px;
     color: black;
 }
 header > li {
@@ -54,7 +54,7 @@ header > li {
   
   .submenu > li {
     line-height: 50px;
-    background-color: #dbe0f4;
+    background-color: #f3f4e2;
   }
   
   .submenu {
@@ -63,7 +63,7 @@ header > li {
   }
 
   header > li:hover {
-    background-color: #c5ccee;
+    background-color: #eff1c5;
     transition-duration: 0.5s;
   }
   
@@ -73,22 +73,74 @@ header > li {
   }
 
 
-.holiday{
+  .holiday {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: 6fr 4fr;
     align-items: center;
-    gap: 9rem;
+    gap: 4rem;
     padding: 3%;
-}
-.holiday img{
+  }
+  
+  .holiday-img {
+    overflow: hidden;
+    border-radius: 10px;
+  }
+  
+  .holiday-img img {
     width: 100%;
     height: auto;
-    border-radius: 10px;
+    transition: transform 0.3s ease-in-out;
+  }
+  
+  .holiday-img:hover img {
+    transform: scale(1.1);
+  }
+  .holiday-text {
+    display: table;
+    border-collapse: collapse;
+    width: 100%;
 }
-.footer{
+
+.holiday-text h5,
+.holiday-text h2 {
+    display: table-caption;
+    text-align: left;
+    margin-bottom: 1rem;
+}
+
+.holiday-text p {
+    display: table-row;
+}
+
+
+
+.holiday-text p {
+    display: table-row;
+}
+
+.holiday-text p span {
+    display: table-cell;
+    padding: 1.8rem;
+    border-bottom: 1px solid #ddd;
+}
+
+.footer {
     padding: 5%;
     background-color: gray;
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, auto));
-    gap: 4rem;
+    color: rgb(233, 233, 233);
+    display: flex;
+    align-items: flex-start;
+    gap: 12rem; /* 두 아이템 사이의 간격 조정 */
+}
+
+.footer-box:first-child h3 {
+    font-size: 3rem; /* 전화번호 크기 키우기 */
+    font-weight: bold; /* 굵게 만들기 */
+    color: rgb(221, 200, 106);
+}
+
+.footer-box p {
+    font-weight: 500; /* 글자 굵게 */
+    font-size: 1.1rem;
+    margin: 15px 0; /* 위아래 간격 조정 */
 }
