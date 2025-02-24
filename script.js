@@ -1,41 +1,42 @@
 let slideIndex = 0;
 
-    function showSlides() {
-        let slides = document.getElementsByClassName("mySlides");
-        let dots = document.getElementsByClassName("dot");
-        
-        // 모든 슬라이드를 숨김
-        for (let i = 0; i < slides.length; i++) {
-            slides[i].style.display = "none";
-        }
+function showSlides() {
+    let slides = document.getElementsByClassName("mySlides");
+    let dots = document.getElementsByClassName("dot");
 
-        // 모든 점에서 'active' 클래스를 제거
-        for (let i = 0; i < dots.length; i++) {
-            dots[i].className = dots[i].className.replace(" active", "");
-        }
-
-        slideIndex++;
-        if (slideIndex > slides.length) { slideIndex = 1; }
-
-        // 현재 슬라이드 표시
-        slides[slideIndex - 1].style.display = "block";
-
-        // 현재 점을 활성화
-        dots[slideIndex - 1].className += " active";
-
-        setTimeout(showSlides, 4000); // 4초마다 슬라이드 전환
+    // 모든 슬라이드와 점 비활성화
+    for (let i = 0; i < slides.length; i++) {
+        slides[i].classList.remove("active"); // 기존 active 클래스 제거
+    }
+    for (let i = 0; i < dots.length; i++) {
+        dots[i].classList.remove("active");
     }
 
-    function plusSlides(n) {
-        slideIndex += n;
-        if (slideIndex > 3) { slideIndex = 1; }
-        if (slideIndex < 1) { slideIndex = 3; }
-        showSlides();
-    }
+    // 현재 슬라이드 활성화
+    slideIndex++;
+    if (slideIndex > slides.length) { slideIndex = 1; }
 
-    function currentSlide(n) {
-        slideIndex = n;
-        showSlides();
-    }
+    slides[slideIndex - 1].classList.add("active"); // 새로운 active 클래스 추가
+    dots[slideIndex - 1].classList.add("active");
 
+    setTimeout(showSlides, 4000); // 4초마다 슬라이드 전환
+}
+
+function plusSlides(n) {
+    slideIndex += n - 1; // 현재 슬라이드를 변경할 때 즉시 적용
+    if (slideIndex >= document.getElementsByClassName("mySlides").length) {
+        slideIndex = 0;
+    }
+    if (slideIndex < 0) {
+        slideIndex = document.getElementsByClassName("mySlides").length - 1;
+    }
     showSlides();
+}
+
+function currentSlide(n) {
+    slideIndex = n - 1;
+    showSlides();
+}
+
+// 처음 슬라이드 시작
+showSlides();

@@ -22,62 +22,80 @@
 }
 
 .mySlides {
-  display: none;
+  position: absolute;
   width: 100%;
+  opacity: 0;
+  transition: opacity 1.5s ease-in-out;
+}
+
+.mySlides.active {
+  opacity: 1;
+  position: relative;
 }
 
 .img-slide {
   display: block;
-  width: 90%;
-  height: 580px;
+  width: 100%;
+  height: 700px;
   margin: 0 auto;
 }
-
 /* 좌우 버튼 스타일 */
 .prev, .next {
   position: absolute;
   top: 50%;
-  padding: 16px;
-  background-color: rgba(0, 0, 0, 0.5);
+  width: 50px; /* 버튼 크기 확대 */
+  height: 50px;
+  background-color: transparent;
   color: white;
-  font-size: 24px;
+  font-size: 80px; /* 화살표 크기 확대 */
   border: none;
   cursor: pointer;
-  z-index: 1;
+  z-index: 2;
   transform: translateY(-50%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .prev {
-  left: 10px;
+  left: 2%;
 }
 
 .next {
-  right: 10px;
+  right: 2%;
+}
+
+.prev:hover, .next:hover {
+  background-color: rgba(0, 0, 0, 0.8);
 }
 
 /* 슬라이드 번호 스타일 */
 .dot-container {
   text-align: center;
   position: absolute;
-  bottom: 10px;
+  bottom: -60px; /* 값 낮추기: 더 아래에 위치 */
   left: 50%;
   transform: translateX(-50%);
   z-index: 2;
 }
 
 .dot {
-  height: 15px;
-  width: 15px;
+  height: 12px;
+  width: 12px;
   margin: 0 5px;
-  background-color: #bbb;
+  background-color: rgba(255, 255, 255, 0.7);
   border-radius: 50%;
   display: inline-block;
-  transition: background-color 0.3s ease;
+  transition: background-color 0.3s ease, transform 0.3s ease;
   cursor: pointer;
 }
 
+.dot:hover {
+  transform: scale(1.2);
+}
+
 .active {
-  background-color: #717171;
+  background-color: white;
 }
 
 
@@ -148,9 +166,9 @@ header > li {
 
   .holiday {
     display: grid;
-    grid-template-columns: 6fr 4fr;
+    grid-template-columns: 5fr 5fr;
     align-items: center;
-    gap: 4rem;
+    gap: 6rem;
     padding: 5%;
   }
   
