@@ -1,6 +1,19 @@
 /* 기본 스타일 */
 
+main {
+    text-align: center;
+}
 
+.section-title {
+    display: inline-block;
+    font-size: 32px;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    width: 15%; /* 화면의 30% 정도 너비 지정 */
+    border-bottom: 3px solid #00448d; /* 파란색 밑줄 */
+}
 .container {
     display: flex;
     justify-content: center;
@@ -13,7 +26,7 @@
     display: flex;
     flex-direction: row;
     background-color: white;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     border-radius: 10px;
     overflow: hidden;
     width: 800px;
