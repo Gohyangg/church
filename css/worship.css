@@ -1,0 +1,53 @@
+/* 전체 레이아웃 */
+.worship-thumnail {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 50px; /* 전체 섹션 간격을 더 넓히기 */
+}
+
+/* 제목 스타일 */
+.worship-title {
+    text-align: center;
+    margin-bottom: 30px; /* 제목과 이미지 간격을 넓힘 */
+}
+
+.worship-title h3 {
+    font-size: 28px; /* 제목 크기 조정 */
+    font-weight: bold;
+}
+
+/* 영상 썸네일 이미지 배치 */
+.worship-thumnail-images {
+    display: flex;
+    justify-content: space-between;
+    gap: 30px; /* 이미지 간격을 더 넓힘 */
+    flex-wrap: wrap;
+    max-width: 1000px; /* 최대 너비를 조금 더 넓힘 */
+}
+
+.worship-thumnail-img {
+    width: calc(33.33% - 30px); /* 이미지 크기 키우기 */
+    margin-bottom: 30px; /* 이미지와 하단 간격을 넓힘 */
+    text-align: center; /* 이미지 하단 텍스트를 중앙 정렬 */
+}
+
+.worship-thumnail-img img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px; /* 이미지의 모서리 둥글게 */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* 그림자 강도 증가 */
+    transition: transform 0.3s ease-in-out; /* 마우스 오버 시 효과 */
+}
+
+.worship-thumnail-img img:hover {
+    transform: scale(1.05); /* 마우스 오버 시 이미지 확대 */
+}
+
+/* 영상 제목 스타일 */
+.worship-video-title {
+    font-size: 18px;
+    font-weight: bold;
+    margin-top: 15px; /* 이미지와 텍스트 간격 */
+    color: #333; /* 텍스트 색상 */
+}

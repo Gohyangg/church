@@ -1,98 +1,70 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="UTF-8">
+  <head>
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>고향교회 위치</title>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200">
 
     <link rel="stylesheet" type="text/css" href="css/style.css">
     <link rel="stylesheet" type="text/css" href="css/naverMap.css">
-
+    <script src="include.js" defer></script>
   </head>
-    <body>
-        <header>
-            <!--상단 로고 -->
-                <a href="index.html"><img src="img/gohyangch_logo.png" alt=""></a>
-            <!--상단 메뉴바 -->
-              <li>
-                <a href="#" class="navbarA">교회소개</a>
-                <ul class="submenu">
-                  <li><a href="#">인사말</a></li>
-                  <li><a href="#">교회비전</a></li>
-                  <li><a href="#">오시는 길</a></li>
-    
-                </ul>
-              </li>
-              <li>
-                <a href="#" class="navbarA">예배</a>
-                <ul class="submenu">
-                  <li><a href="#">주일설교</a></li>
-                  <li><a href="#">수요예배</a></li>
-                  <li><a href="#">찬양팀</a></li>
-    
-                </ul>
-              </li>
-              <li>
-                <a href="#" class="navbarA">안내</a>
-                <ul class="submenu">
-                  <li><a href="#">예배안내</a></li>
-                  <li><a href="#"></a></li>
-                  <li><a href="#">오시는 길</a></li>
-    
-                </ul>
-              </li>
-              <li>
-                <a href="#" class="navbarA">소식</a>
-                <ul class="submenu">
-                  <li><a href="#">submenu01</a></li>
-                  <li><a href="#">submenu02</a></li>
-                  <li><a href="#">submenu03</a></li>
-                </ul>
-              </li>
-        </header>
+  <body>
 
+    <div id="header"></div>  <!-- 공통 헤더 로드됨 -->
 
-        <!-- 네이버지도도 -->
-        <section class="naverMap">
-          <div class="container">
-            <!-- 제목 영역 -->
-            <div class="title-area">
-              <h1>오시는 길</h1>
-              <span class="material-symbols-outlined">map</span>
-            </div>
-            
-            <!-- 내용 영역 -->
-            <div class="content-area">
-              <div class="info-area">
-                <p><strong>고향장로교회</strong></p>
-                <p><strong>주소:</strong> 서울특별시 관악구 ~~~</p>
-              </div>
-              <div class="map-area" id="map"></div>
-            </div>
-          </div>
-          
-          <!-- 네이버 지도 API -->
-          <script type="text/javascript" src="https://openapi.map.naver.com/openapi/v3/maps.js?ncpClientId=5l9vh7sjrh"></script>
-          <script>
-            var mapDiv = document.getElementById('map');
-            var map = new naver.maps.Map(mapDiv);
-          </script>
-        </section>
+    <!-- 네이버지도도 -->
+    <section class="naverMap">
+      <div class="container">
+        <!-- 제목 영역 -->
+        <div class="title-area">
+          <h1>오시는 길</h1>
+          <span class="material-symbols-outlined">map</span>
+        </div>
         
+        <!-- 내용 영역 -->
+        <div class="content-area">
+          <div class="info-area">
+            <p><strong>고향장로교회</strong></p>
+            <p><strong>주소:</strong> 서울특별시 관악구 호암로26가길 8</p>
+            <p>서울대벤처타운역 도보 3분 거리</p>
+          </div>
+          <div class="map-area" id="map"></div>
+        </div>
+      </div>
+      
+      <!-- 네이버 지도 API -->
+      <script type="text/javascript" src="https://openapi.map.naver.com/openapi/v3/maps.js?ncpClientId=5l9vh7sjrh"></script>
+      <script>
+        var mapDiv = document.getElementById('map');
+        var map = new naver.maps.Map(mapDiv, {
+          zoom: 16, // 지도의 초기 줌 레벨 설정
+          center: new naver.maps.LatLng(37.4773, 126.9527), // 기본 좌표 (서울특별시 관악구 호암로26가길 8)
+        });
 
+        var geocoder = new naver.maps.Geocoder();
 
-        <section class="footer">
-            <div class="footer-box">
-                <h3>02&#41;872-0788-9</h3>
-                <p>전화가능시간 : 09~16시 </p>
-            </div>
-            <div class="footer-box">
-                    <p>대표: 엄상일</p>
-                    <p>주소: 대학동 ~길 ~~</p>
-                    <p>FAX. 02&#41;872-5729</p>
-                    <p>Email&#41; gohyangch.gmail.com</p>
-            </div>
-        </section>
-    </body>
+        // 주소로 좌표 변환
+        geocoder.geocode({ address: "서울특별시 관악구 호암로26가길 8" }, function(status, response) {
+          if (status === naver.maps.Service.Status.OK) {
+            var result = response.result;
+            var location = new naver.maps.LatLng(result.items[0].y, result.items[0].x);
+            
+            // 지도 위치 업데이트
+            map.setCenter(location);
+
+            // 마커 추가
+            var marker = new naver.maps.Marker({
+              position: location,
+              map: map
+            });
+          }
+        });
+      </script>
+    </section>
+
+    <div id="footer"></div>  <!-- 공통 푸터 로드됨 -->
+
+  </body>
 </html>

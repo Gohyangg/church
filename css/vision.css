@@ -1,0 +1,84 @@
+/* 기본 레이아웃 설정 */
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+    width: 100%;
+}
+
+/* 각 비전 박스 설정 */
+.vision-box {
+    display: flex;
+    flex-direction: row;
+    height: 100vh; /* 화면 전체 높이 차지 */
+    background-size: cover;
+    background-position: center;
+    color: white;
+}
+
+/* 비전 내용 */
+.vision-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    width: 50%; /* 제목과 설명을 50%씩 나누기 */
+    padding: 20px;
+    z-index: 1; /* 텍스트가 배경 위에 오도록 설정 */
+}
+
+.vision-title h2 {
+    font-size: 3rem;
+    margin-bottom: 15px;
+    font-weight: bold;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
+}
+
+.vision-scription p {
+    font-size: 1.5rem;
+    line-height: 1.8;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+}
+
+/* 비전 박스 배경 이미지 설정 (각각 다른 이미지) */
+.vision-box:nth-child(1) {
+    background-image: url('img/background_main');
+}
+
+.vision-box:nth-child(2) {
+    background-image: url('img/background_main');
+}
+
+.vision-box:nth-child(3) {
+    background-image: url('img/background_main');
+}
+
+.vision-box:nth-child(4) {
+    background-image: url('img/background_main');
+}
+
+/* 모바일 화면에서 비전 박스를 100% 너비로 설정 */
+@media (max-width: 768px) {
+    .vision-box {
+        flex-direction: column; /* 화면 크기에 맞춰 세로로 배치 */
+    }
+
+    .vision-content {
+        width: 100%;
+    }
+
+    .vision-title h2 {
+        font-size: 2.5rem;
+    }
+
+    .vision-scription p {
+        font-size: 1.2rem;
+    }
+}
