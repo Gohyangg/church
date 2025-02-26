@@ -14,48 +14,45 @@
 
     <div id="header"></div>  <!-- 공통 헤더 로드됨 -->
 
-    <!-- 네이버지도도 -->
     <section class="naverMap">
       <div class="container">
         <!-- 제목 영역 -->
         <div class="title-area">
-          <h1>오시는 길</h1>
           <span class="material-symbols-outlined">map</span>
+          <h1>오시는 길</h1>
         </div>
-        
+    
         <!-- 내용 영역 -->
         <div class="content-area">
           <div class="info-area">
-            <p><strong>고향장로교회</strong></p>
-            <p><strong>주소:</strong> 서울특별시 관악구 호암로26가길 8</p>
-            <p>서울대벤처타운역 도보 3분 거리</p>
+            <div class="info-box">
+              <h2>고향장로교회</h2>
+              <p><strong>주소:</strong> 서울특별시 관악구 호암로26가길 8</p>
+              <p>서울대벤처타운역 도보 3분 거리</p>
+            </div>
           </div>
           <div class="map-area" id="map"></div>
         </div>
       </div>
-      
+    
       <!-- 네이버 지도 API -->
       <script type="text/javascript" src="https://openapi.map.naver.com/openapi/v3/maps.js?ncpClientId=5l9vh7sjrh"></script>
       <script>
         var mapDiv = document.getElementById('map');
         var map = new naver.maps.Map(mapDiv, {
-          zoom: 16, // 지도의 초기 줌 레벨 설정
-          center: new naver.maps.LatLng(37.4773, 126.9527), // 기본 좌표 (서울특별시 관악구 호암로26가길 8)
+          zoom: 16,
+          center: new naver.maps.LatLng(37.4773, 126.9527),
         });
-
+    
         var geocoder = new naver.maps.Geocoder();
-
-        // 주소로 좌표 변환
+    
         geocoder.geocode({ address: "서울특별시 관악구 호암로26가길 8" }, function(status, response) {
           if (status === naver.maps.Service.Status.OK) {
             var result = response.result;
             var location = new naver.maps.LatLng(result.items[0].y, result.items[0].x);
-            
-            // 지도 위치 업데이트
             map.setCenter(location);
-
-            // 마커 추가
-            var marker = new naver.maps.Marker({
+    
+            new naver.maps.Marker({
               position: location,
               map: map
             });
