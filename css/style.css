@@ -115,12 +115,41 @@ header nav .navbar > li:hover {
 }
 
 
+@media screen and (max-width: 768px) {
+  /* 헤더를 화면 중앙 정렬 + 슬라이드보다 위로 */
+  header {
+      width: 100%;
+      position: fixed; /* 화면에 고정 */
+      top: 0; /* 상단에 고정 */
+      left: 0;
+      display: flex;
+      justify-content: center; /* 가로 방향 중앙 정렬 */
+      align-items: center; /* 세로 방향 중앙 정렬 */
+      height: 100px; /* 로고가 중앙에 있도록 높이 설정 */
+      padding: 0; /* 기본 패딩 제거 */
+      background-color: white; /* 배경색 추가 */
+      z-index: 9999; /* 슬라이드보다 위로 */
+  }
 
+  /* 로고 감싸는 a 태그도 중앙 정렬 */
+  header a {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 100%; /* 부모 크기만큼 확장 */
+  }
 
+  /* 네비게이션 메뉴 숨김 */
+  header nav {
+      display: none;
+  }
 
-
-
-
+  /* 로고 크기 조정 */
+  header img {
+      width: 180px; /* 작은 화면에서는 크기를 줄임 */
+      height: auto;
+  }
+}
 
 
 /* ----------------------------------------------------*/
