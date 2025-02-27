@@ -100,7 +100,7 @@
 }
   
   /* ----------------------------------------------------*/
-/* ----------------------중간세션션------------------------------*/
+/* ----------------------중요소식세션션------------------------------*/
 /* ----------------------------------------------------*/
 .holiday {
   display: grid;
@@ -154,6 +154,108 @@
     grid-template-columns: 1fr; /* 한 줄에 1개씩 배치 */
   }
 }
+
+
+/* ----------------------------------------------------*/
+/* ------------------------새성전 세션션---------------------------*/
+/* ----------------------------------------------------*/
+/* ----------------------------------------------------*/
+
+.rebuild {
+  position: relative; /* 부모 요소 기준 설정 */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 50px;
+  padding: 10% 20px;
+  background-image: url('../img/build-background.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  z-index: 1; /* 내용이 오버레이 위에 오도록 설정 */
+}
+
+.rebuild::before {
+  content: ""; /* 가상 요소 생성 */
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(255, 255, 255, 0.4); /* 검은색 반투명 오버레이 (0.5는 투명도) */
+  z-index: -1; /* 배경 뒤로 이동 */
+}
+
+.build-scription {
+  flex: none; /* 크기를 자동 조정하지 않도록 설정 */
+  font-size: 18px;
+  color: #333;
+  display: flex;
+  flex-direction: column;
+  gap: 30px; /* 줄 간격을 20px로 설정 */
+}
+
+.build-scription p:first-child {
+  font-size: 14px; /* 'Future Campus' 크기 줄이기 */
+}
+
+.build-scription h3 {
+  font-size: 48px; /* h3 크기 키우기 */
+}
+
+.bulid-img img {
+  width: 600px; /* 이미지 크기 확대 */
+  height: auto;
+}
+
+button {
+  background-color: black;
+  color: white;
+  padding: 20px 20px;
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+  display: inline-flex; /* 버튼 길이 자동 조정 */
+  align-items: center;
+  width: auto; /* 내용에 맞게 크기 조정 */
+  max-width: 150px; /* 버튼이 너무 커지지 않도록 최대 너비 설정 */
+}
+
+button::after {
+  content: '\2192'; /* 오른쪽 화살표 → */
+  margin-left: 10px;
+}
+
+@media (max-width: 768px) {
+  .rebuild {
+    flex-direction: column;
+    gap: 30px;
+    padding: 15% 10px;
+    text-align: center;
+  }
+
+  .build-scription {
+    font-size: 16px;
+    gap: 20px;
+  }
+
+  .build-scription h3 {
+    font-size: 36px;
+  }
+
+  .bulid-img img {
+    width: 90%;
+    max-width: 400px;
+  }
+
+  button {
+    font-size: 14px;
+    padding: 15px 15px;
+    max-width: 130px;
+    margin: 0 auto; /* 가운데 정렬 */
+  }
+}
+
 /* ----------------------------------------------------*/
 /* ----------------------바로가기3박스스------------------------------*/
 /* ----------------------------------------------------*/

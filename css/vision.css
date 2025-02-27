@@ -33,55 +33,50 @@ main {
     margin: 10px auto 0;
   }
 
-  .introduce-box {
+/* 세련된 디자인 적용 */
+.introduce-box {
     display: flex;
-    flex-direction: row;
-    height: 80vh;
-    background-image: url('../img/gohyang_ch01.jpg'); /* 적절한 배경 이미지 설정 */
-    background-size: cover;
-    background-position: center;
-    color: rgb(0, 0, 0);
-    position: relative;
-    overflow: hidden;
-}
-
-.introduce-content {
-    display: flex;
-    width: 100%;
-    position: relative;
-}
-
-.introduce-title {
-    width: 50%;
-    display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
+    height: 80vh;
+    background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('../img/gohyang_ch01.jpg') no-repeat center/cover;
+    color: white;
     text-align: center;
-    z-index: 2;
+    padding: 40px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    border-radius: 10px;
 }
 
 .introduce-title h2 {
     font-size: 3rem;
     font-weight: bold;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.7);
+    letter-spacing: 2px;
 }
 
 .introduce-scription {
-    width: 50%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    background: rgba(0, 0, 0, 0.5);
-    clip-path: polygon(20% 0%, 100% 0%, 100% 100%, 0% 100%);
+    max-width: 600px;
+    font-size: 1.2rem;
+    line-height: 1.8;
+    background: rgba(255, 255, 255, 0.15);
     padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
 }
 
-.introduce-scription p {
-    font-size: 1.5rem;
-    line-height: 1.8;
-    color: white;
-    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+@media (max-width: 768px) {
+    .introduce-box {
+        height: auto;
+        padding: 20px;
+    }
+    .introduce-title h2 {
+        font-size: 2.5rem;
+    }
+    .introduce-scription {
+        font-size: 1rem;
+    }
 }
 
 /* 비전 박스 전체 컨테이너 */
