@@ -40,24 +40,14 @@
       <script>
         var mapDiv = document.getElementById('map');
         var map = new naver.maps.Map(mapDiv, {
-          zoom: 16,
-          center: new naver.maps.LatLng(37.4773, 126.9527),
+          zoom: 17,
+          center: new naver.maps.LatLng(37.470476, 126.933935),
         });
     
-        var geocoder = new naver.maps.Geocoder();
-    
-        geocoder.geocode({ address: "서울특별시 관악구 호암로26가길 8" }, function(status, response) {
-          if (status === naver.maps.Service.Status.OK) {
-            var result = response.result;
-            var location = new naver.maps.LatLng(result.items[0].y, result.items[0].x);
-            map.setCenter(location);
-    
-            new naver.maps.Marker({
-              position: location,
-              map: map
-            });
-          }
-        });
+        var marker = new naver.maps.Marker({
+		    position: new naver.maps.LatLng(37.470476, 126.933935),
+		    map: map
+		});
       </script>
     </section>
 
