@@ -40,7 +40,7 @@ main {
     justify-content: center;
     align-items: center;
     height: 80vh;
-    background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('../img/gohyang_ch01.jpg') no-repeat center/cover;
+    background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('../img/gohyang_ch06.png') no-repeat center/cover;
     color: white;
     text-align: center;
     padding: 40px;

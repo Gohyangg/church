@@ -1,16 +1,20 @@
-
+main {
+    background-image: url('../img/gohyang_ch07.png'); /* 배경 이미지 URL */
+    background-size: cover; /* 배경 이미지가 화면을 덮도록 설정 */
+    background-position: center center; /* 이미지의 위치 조정 */
+    padding: 50px 0; /* 위 아래 여백을 추가 */
+}
 
 .container {
     max-width: 700px;
     width: 90%;
-    background: white;
     padding: 30px;
     border-radius: 15px;
     box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.1);
     text-align: center;
-    margin: 5% auto; /* 가운데 정렬 */
+    margin: 5% auto;
+    background-color: rgba(255, 255, 255, 0.9); /* 흰색 배경에 약간의 투명도 추가 */
 }
-
 h2 {
     color: #2d6a4f;
     font-size: 24px;
@@ -41,4 +45,20 @@ tr:nth-child(even) {
 
 tr:nth-child(odd) {
     background-color: #e9ecef;
+}
+
+/* 스마트폰 크기에서 .container 중앙 정렬 */
+@media (max-width: 768px) {
+    main {
+        display: flex; /* flexbox로 중앙 정렬 */
+        justify-content: center; /* 가로 중앙 정렬 */
+        align-items: center; /* 세로 중앙 정렬 */
+        padding: 100px 0; /* 여백 조정 */
+    }
+
+    .container {
+        width: 90%; /* 스마트폰에서는 90% 너비 */
+        max-width: none; /* 최대 너비 제한 없애기 */
+        padding: 20px ; /* 여백 조정 */
+    }
 }
