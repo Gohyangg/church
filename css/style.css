@@ -1,3 +1,10 @@
+@font-face {
+  font-family: 'MyCustomFont'; /* 폰트 이름 설정 */
+  src: url('fonts/Paperlogy/Paperlogy-1Thin.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
 *{
     padding: 0;
     margin: 0;
@@ -7,7 +14,7 @@
     border: none;
     outline: none;
     scroll-behavior: smooth;
-    font-family: Arial;
+    font-family: 'MyCustomFont', sans-serif;
 }
 
 
@@ -71,7 +78,8 @@ header nav .navbar > li {
 .submenu {
   position: absolute;
   top: 100%;
-  left: -30%;
+  left: 50%;
+  transform: translateX(-50%); /* 부모 요소의 가운데 정렬 */
   width: 150px;
   height: 0;
   overflow: hidden;
@@ -80,7 +88,7 @@ header nav .navbar > li {
   list-style: none;
   padding: 0;
   margin: 0;
-  z-index: 10; /* 서브메뉴가 다른 요소 위에 오도록 설정 */
+  z-index: 10;
 }
 
 /* 서브메뉴 항목 */
