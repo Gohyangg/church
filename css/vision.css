@@ -14,6 +14,10 @@ main {
     gap: 40px; /* 비전 박스 간격 추가 */
 }
 
+
+.intro{
+    padding-bottom: 35px;
+}
 .page-title {
     text-align: center;
     margin-bottom: 20px;
@@ -25,13 +29,6 @@ main {
     color: rgb(71, 72, 82);
   }
   
-  .page-title hr {
-    width: 20%;
-    height: 3px;
-    background-color: rgb(0, 0, 122);
-    border: none;
-    margin: 10px auto 0;
-  }
 
 /* 세련된 디자인 적용 */
 .introduce-box {
@@ -88,6 +85,7 @@ main {
     width: 80%;
     margin: 0 auto;
     position: relative;
+    padding-bottom: 60px;
 }
 
 /* 개별 비전 박스 */

@@ -14,14 +14,12 @@
   position: absolute;
   width: 100%;
   opacity: 0;
-  transition: opacity 1.5s ease-in-out;
-  z-index: 1; /* 슬라이드 이미지의 z-index를 낮추기 */
+  transition: opacity 1s ease-in-out; /* 애니메이션 부드럽게 */
 }
 
 .mySlides.active {
   opacity: 1;
   position: relative;
-  z-index: 2; /* 활성화된 슬라이드의 z-index를 높이기 */
 }
 
 .img-slide {
@@ -35,34 +33,35 @@
 .prev, .next {
   position: absolute;
   top: 50%;
-  width: 80px;
-  height: 80px;
+  width: 70px; /* 버튼 크기 축소 */
+  height: 70px;
   background-color: transparent;
   border: none;
   cursor: pointer;
-  z-index: 3; /* 버튼의 z-index를 활성화된 슬라이드보다 높게 설정 */
+  z-index: 100;
   transform: translateY(-50%);
   display: flex;
   align-items: center;
   justify-content: center;
-  background-size: 60%;
+  background-size: contain; /* 이미지 크기를 버튼 크기에 맞춤 */
+  background-position: center; /* 이미지 중앙 정렬 */
   background-repeat: no-repeat;
 }
 
-/* 왼쪽 버튼에 이미지 적용 */
+/* 왼쪽 버튼 */
 .prev {
   left: 2%;
-  background-image: url('img/direct-left.png'); /* 이미지 경로 확인 */
+  background-image: url('../img/direct-left.png');
 }
 
-/* 오른쪽 버튼에 이미지 적용 */
+/* 오른쪽 버튼 */
 .next {
   right: 2%;
-  background-image: url('img/direct-right.png'); /* 이미지 경로 확인 */
+  background-image: url('../img/direct-right.png');
 }
 
 .prev:hover, .next:hover {
-  background-color: rgba(0, 0, 0, 0.8);
+  background-color: rgba(0, 0, 0, 0.3);
 }
 
 /* 슬라이드 번호 스타일 */
@@ -231,6 +230,7 @@
   cursor: pointer;
   transition: background 0.3s;
   align-self: flex-start;
+  white-space: nowrap; /* 텍스트가 줄 바꿈 없이 한 줄로 유지되게 함 */
 }
 
 .intro-scription button:hover {
@@ -339,8 +339,11 @@ button {
   align-items: center;
   width: auto; /* 내용에 맞게 크기 조정 */
   max-width: 150px; /* 버튼이 너무 커지지 않도록 최대 너비 설정 */
+  white-space: nowrap; /* 텍스트가 줄 바꿈 없이 한 줄로 유지되게 함 */
 }
-
+.rebuild button:hover {
+  background-color: #444444;
+}
 button::after {
   content: '\2192'; /* 오른쪽 화살표 → */
   margin-left: 10px;
