@@ -1,7 +1,11 @@
 main {
     padding: 0; /* 패딩 제거 */
 }
-
+#header {
+    position: relative;
+    z-index: 1000; /* 이미지보다 높은 값 */
+    background-color: white; /* 헤더가 이미지 위에 보이도록 */
+}
 /* 각 섹션 스타일 */
 section {
     display: flex;
