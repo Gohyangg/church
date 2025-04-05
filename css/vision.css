@@ -106,21 +106,23 @@ main {
 }
 
 /* 배경 이미지 */
+/* 기존 배경 이미지 제거하고 배경색 적용 */
 .vision-box:nth-child(1) {
-    background-image: url('../img/background_main.jpg');
+    background-color: #2c3e50; /* 다크 네이비 블루 (차분하고 진중한 느낌) */
 }
 
 .vision-box:nth-child(2) {
-    background-image: url('../img/background_main.jpg');
+    background-color: #3f5871; /* 중간 톤 블루그레이 */
 }
 
 .vision-box:nth-child(3) {
-    background-image: url('../img/gohyang_ch02.jpg');
+    background-color: #5b708a; /* 약간 더 밝고 부드러운 블루그레이 */
 }
 
 .vision-box:nth-child(4) {
-    background-image: url('../img/background_main.jpg');
+    background-color: #b0c4d8; /* 밝고 가벼운 느낌의 블루그레이 */
 }
+
 
 /* 비전 제목 스타일 */
 .vision-title {
@@ -134,7 +136,7 @@ main {
 .vision-scription {
     font-size: 1.2rem;
     line-height: 1.5;
-    background: rgba(0, 0, 0, 0.5);
+    /* background: rgba(0, 0, 0, 0.5); */
     padding: 10px 15px;
     border-radius: 10px;
 }

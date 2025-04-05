@@ -5,6 +5,7 @@
   background: #ffffff;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
   border-radius: 10px;
+  margin-bottom: 2%;
 }
 
 /* 제목 영역 */
@@ -13,7 +14,7 @@
   align-items: center;
   justify-content: center;
   gap: 10px;
-  border-bottom: 3px solid #4CAF50;
+  border-bottom: 3px solid #3176d1;
   margin-bottom: 20px;
   padding-bottom: 15px;
 }
@@ -26,7 +27,7 @@
 
 .title-area span {
   font-size: 2.5em;
-  color: #4CAF50;
+  color: #327ceb;
 }
 
 /* 내용 영역 */
@@ -35,6 +36,10 @@
   flex-wrap: wrap;
   gap: 20px;
   justify-content: space-between;
+}
+.content-area span {
+  font-size: 0.8em;
+  color:#3887d1;
 }
 
 /* 정보 영역 */
@@ -45,13 +50,7 @@
   justify-content: center;
 }
 
-.info-box {
-  padding: 20px;
-  background: #f9f9f9;
-  border-left: 5px solid #4CAF50;
-  border-radius: 8px;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-}
+
 
 .info-box h2 {
   font-size: 1.8em;

@@ -293,6 +293,7 @@
   background-position: center;
   background-repeat: no-repeat;
   z-index: 1; /* 내용이 오버레이 위에 오도록 설정 */
+  
 }
 
 .rebuild::before {
