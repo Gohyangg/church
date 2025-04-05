@@ -10,24 +10,36 @@
     
     <link rel="stylesheet" type="text/css" href="css/style.css">
     <link rel="stylesheet" type="text/css" href="css/index.css">
+    <link rel="stylesheet" type="text/css" href="css/popup.css">
     <script src="script.js" defer></script>
     <script src="include.js" defer></script>
+    <script src="js/popup.js" defer></script>
+
 </head>
 <body>
   <div id="header"></div>
-
+    <!--팝ㅇ업-->
+  <div id="popup">
+    <img src="img/travel.png" alt="공지 이미지">
+    <div class="popup-footer">
+        <label>
+          <input type="checkbox" id="dontShowToday"> 하루동안 보지 않기
+        </label>
+        <button onclick="closePopup()">닫기</button>
+      </div>
+  </div>
   
     <!--슬라이드 -->
     <section>
       <div class="slideshow-container">
           <div class="mySlides">
-              <img src="img/slidetitle02.png" class="img-slide" alt="슬라이드 1">
+              <img src="img/slidetitle.jpg" class="img-slide" alt="슬라이드 1">
           </div>
           <div class="mySlides">
-              <img src="img/travel.png" class="img-slide" alt="슬라이드 2">
+              <img src="img/slidetitle.jpg" class="img-slide" alt="슬라이드 2">
           </div>
           <div class="mySlides">
-              <img src="img/slide03.png" class="img-slide" alt="슬라이드 3">
+              <img src="img/slidetitle.jpg" class="img-slide" alt="슬라이드 3">
           </div>
   
           <!-- 좌우 버튼 -->
@@ -68,7 +80,7 @@
                 <p>FUTURE CAMPUS</p>
                 <h3>Arise & Rebuild</h3>
                 <p>We are building a new campus. help bring heaven to earth<br> and invest in the future.</p>
-                <button>Learn More</button>
+                <a href="rebuild.html"><button>Learn More</button></a>
             </div>
             <div class="bulid-img">
                 <img src="img/gohyang_ch05.png" alt="">
@@ -109,7 +121,7 @@
               <p>저희 교회가 처음이신가요?</p>
               <p>친절하게 안내해드리겠습니다.</p>
           </a>
-          <a href="https://www.youtube.com/@gohyangchurch" target="_blank" class="direct-box">
+          <a href="worship.html" target="_blank" class="direct-box">
               <div class="icon-wrapper">
                   <span class="material-symbols-outlined">ondemand_video</span>
               </div>
