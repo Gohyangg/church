@@ -110,57 +110,67 @@
   /* ----------------------------------------------------*/
 /* ----------------------중요소식세션션------------------------------*/
 /* ----------------------------------------------------*/
-.holiday {
+.gallery {
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: 12% 5%;
-  background-color: rgba(0, 0, 0, 0.9); /* 검은색 배경에 오페시티 적용 */
-  background-size: cover; /* 필요 없지만 유지해도 괜찮음 */
-  background-position: center center; /* 필요 없지만 유지해도 괜찮음 */
-  background-attachment: fixed; /* 필요 없지만 유지해도 괜찮음 */
-}
-.holiday-title {
-  text-align: center; /* 텍스트 중앙 정렬 */
-  color: rgb(219, 219, 219);
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+  padding: 100px 20px;
+  background-color: #111;
 }
 
-.holiday-title h3{
-  font-size: 48px;
-}
-.holiday-img-box {
-  display: flex;
-  justify-content: center; /* 이미지들을 가로로 나열 */
-  gap: 2rem; /* 이미지 간의 간격 조정 */
-  margin-top: 2rem; /* holiday-title과 이미지들 사이에 여백 추가 */
+.gallery-title {
+  width: 100%;
+  text-align: center;
+  margin-bottom: 3rem;
 }
 
-.holiday-img {
+.gallery-title h3 {
+  font-size: 40px;
+  font-weight: 300;
+  color: white;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.gallery-box {
   position: relative;
+  width: 180px;
+  height: 360px;
+  background-image: url('../img/info-img.webp'); /* 최후의 만찬 전체 이미지 경로 */
+  background-size: 600% 100%; /* 가로로 6등분 */
+  background-repeat: no-repeat;
+  background-position: center;
   overflow: hidden;
-  border-radius: 10px;
-  box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.2); /* 그림자 추가 */
-  width: 380px; /* 이미지 크기 설정 */
-  height: auto;
+  cursor: pointer;
+  transition: transform 0.3s ease;
 }
 
-.holiday-img img {
-  width: 100%; /* 부모 요소의 너비에 맞추어 이미지 크기 설정 */
-  height: auto;
-  transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
+.gallery-box:hover {
+  transform: scale(1.02);
 }
 
-.holiday-img:hover img {
-  transform: scale(1.1);
-  opacity: 0.3;
+.overlay {
+  position: absolute;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.85);
+  color: white;
+  opacity: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 1rem;
+  font-size: 14px;
+  font-weight: 300;
+  transition: opacity 0.3s ease;
 }
 
-@media (max-width: 768px) {
-  .holiday-img-box {
-    flex-direction: column; /* 작은 화면에서 이미지 세로로 배치 */
-    align-items: center; /* 세로로 배치 시 중앙 정렬 */
-  }
+.gallery-box:hover .overlay {
+  opacity: 1;
 }
+
+
 
 /* ----------------------------------------------------*/
 /* ------------------------intro 세션션---------------------------*/
@@ -185,7 +195,7 @@
 }
 
 .intro-title h3 {
-  font-size: 48px;
+  font-size: 38px;
   font-weight: bold;
   color: #333;
 }
@@ -321,7 +331,7 @@
 }
 
 .build-scription h3 {
-  font-size: 48px; /* h3 크기 키우기 */
+  font-size: 42px; /* h3 크기 키우기 */
 }
 
 .bulid-img img {
@@ -384,72 +394,80 @@ button::after {
 /* ----------------------바로가기3박스스------------------------------*/
 /* ----------------------------------------------------*/
 /* ----------------------------------------------------*/
-
 .direct {
   display: flex;
   justify-content: center;
-  gap: 20px;
-  padding: 100px;
+  gap: 60px;
+  padding: 100px 20px;
   background-color: #f9f9f9;
+  flex-wrap: wrap;
 }
 
 .direct-box {
-  flex: 1;
-  max-width: 300px;
-  min-height: 250px;
-  padding: 30px;
+  font-family: 'Noto Sans';
+  width: 200px;
+  height: 200px;
+  border: 1px solid black;
+  border-radius: 50%;
   background: white;
-  border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   text-align: center;
+  padding: 30px;
+  transition: all 0.3s ease;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center; /* 가운데 정렬 */
+  align-items: center;
+  text-decoration: none;
+  color: black;
+  font-weight: 300;
+  letter-spacing: 0.5px;
 }
 
 .direct-box:hover {
-  transform: scale(1.05); /* 마우스 오버 시 박스 크기 커짐 */
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* 그림자 강하게 */
+  background: black;
+  color: white;
+}
+
+.direct-box:hover .material-symbols-outlined {
+  color: white;
 }
 
 .material-symbols-outlined {
-  font-size: 40px; /* 아이콘 크기 크게 조정 */
-  margin-bottom: 20px; /* 아이콘과 텍스트 간격 조정 */
-  color: #b39256;
+  font-size: 36px;
+  margin-bottom: 20px;
+  color: black;
+  transition: color 0.3s ease;
+  font-weight: 300;
 }
 
 .direct h3 {
-  margin-bottom: 10px;
-  color: #333;
+  font-size: 16px;
+  font-weight: 300;
+  margin: 0;
+  transition: color 0.3s ease;
 }
 
 .direct p {
-  color: #666;
+  display: none;
 }
 
+/* 반응형 */
 @media (max-width: 768px) {
   .direct {
-    gap: 10px; /* 박스 간의 간격을 좁힘 */
+    gap: 30px;
   }
 
   .direct-box {
-    flex-basis: 32%; /* 박스를 1줄에 3개로 배치하기 위해 32%로 설정 */
-    flex-grow: 1; /* 박스가 가로로 늘어날 수 있도록 설정 */
-    padding: 10px; /* 여유 있는 패딩 */
+    width: 140px;
+    height: 140px;
+    padding: 20px;
   }
 
-  /* 텍스트 숨기기 */
-  .direct-box p {
-    display: none;
+  .material-symbols-outlined {
+    font-size: 28px;
   }
 
   .direct h3 {
-    font-size: 14px; /* h3 글자 크기 모바일에서 줄이기 */
-  }
-
-  /* 아이콘 크기 모바일에서 조금 줄이기 */
-  .material-symbols-outlined {
-    font-size: 30px;
+    font-size: 12px;
   }
 }

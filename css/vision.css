@@ -1,3 +1,4 @@
+
 /* 기본 레이아웃 설정 */
 body {
     font-family: 'Arial', sans-serif;
@@ -10,59 +11,95 @@ main {
     display: flex;
     flex-direction: column;
     margin: 0 auto;
+    margin-bottom: 10%;
     width: 100%;
     gap: 40px; /* 비전 박스 간격 추가 */
 }
 
-
-.intro{
-    padding-bottom: 35px;
+.intro {
+  padding: 60px 20px;
+  background-color: #f9f9f9;
+  font-size: 0.95rem; /* 전체 폰트 살짝 축소 */
 }
+
 .page-title {
-    text-align: center;
-    margin-bottom: 20px;
-  }
-  
-  .page-title h1 {
-    font-size: 2rem;
-    margin: 0;
-    color: rgb(71, 72, 82);
-  }
-  
+  text-align: center;
+  margin-bottom: 10px;
+}
 
-/* 세련된 디자인 적용 */
+
 .introduce-box {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    height: 80vh;
-    background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('../img/gohyang_ch06.png') no-repeat center/cover;
-    color: white;
-    text-align: center;
-    padding: 40px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
-    border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  gap: 40px;
+  flex-wrap: wrap;
 }
 
-.introduce-title h2 {
-    font-size: 3rem;
-    font-weight: bold;
-    margin-bottom: 20px;
-    text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.7);
-    letter-spacing: 2px;
+.introduce-text {
+  flex: 1;
+  text-align: right;
+  padding: 20px;
 }
 
-.introduce-scription {
-    max-width: 600px;
-    font-size: 1.2rem;
-    line-height: 1.8;
-    background: rgba(255, 255, 255, 0.15);
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+.introduce-text h2 {
+  font-size: 1.6rem; /* 기존보다 작게 */
+  font-weight: bold;
+  margin-bottom: 16px;
+  color: #222;
 }
 
+.introduce-text p {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: #555;
+}
+
+.introduce-image {
+  flex: 1;
+  height: 300px;
+  background: url('../img/gohyang_ch06.png') no-repeat center/cover;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+  /* radius 제거 */
+  border-radius: 0;
+}
+
+/* 기존 introduce-box 그대로 재사용 */
+.introduce-box.second {
+  justify-content: flex-start; /* 왼쪽 정렬 */
+  margin-left: 20%;             /* 왼쪽으로 치우침 (조절 가능) */
+  margin-right: auto;
+  max-width: 1200px;
+}
+
+.introduce-image.image-left {
+  flex: 1;
+  height: 400px;
+  background: url('../img/gohyang_ch02.jpg') no-repeat center/cover;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+  border-radius: 0;
+}
+
+.introduce-text.text-left {
+  flex: 1.2;
+  text-align: left;
+  padding: 20px;
+}
+
+.introduce-text.text-left h2 {
+  font-size: 1.6rem;
+  font-weight: bold;
+  margin-bottom: 16px;
+  color: #222;
+}
+
+.introduce-text.text-left p {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: #555;
+}
 @media (max-width: 768px) {
     .introduce-box {
         height: auto;
@@ -76,86 +113,90 @@ main {
     }
 }
 
-/* 비전 박스 전체 컨테이너 */
-.vision-container {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr); /* 2열 그리드 */
-    grid-template-rows: repeat(2, 1fr); /* 2행 그리드 */
-    gap: 20px;
-    width: 80%;
-    margin: 0 auto;
-    position: relative;
-    padding-bottom: 60px;
+.vision-circle-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0px;
+  margin: 10px auto;
+  flex-wrap: wrap;
+  max-width: 1000px;
 }
 
-/* 개별 비전 박스 */
-.vision-box {
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    height: 300px; /* 고정된 높이 */
-    color: white;
-    text-align: center;
-    background-size: cover;
-    background-position: center;
-    border-radius: 15px;
-    overflow: hidden;
-    padding: 20px;
+.vision-circle {
+  position: relative;
+  width: 160px;
+  height: 160px;
+  border-radius: 50%;
+  background-color: white;
+  border: 2px solid black;
+  color: black;
+  font-weight: bold;
+  text-align: center;
+  overflow: hidden;
+  margin-left: -30px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-/* 배경 이미지 */
-/* 기존 배경 이미지 제거하고 배경색 적용 */
-.vision-box:nth-child(1) {
-    background-color: #2c3e50; /* 다크 네이비 블루 (차분하고 진중한 느낌) */
+.vision-circle:first-child {
+  margin-left: 0;
 }
 
-.vision-box:nth-child(2) {
-    background-color: #3f5871; /* 중간 톤 블루그레이 */
+/* Hover 효과 */
+.vision-circle:hover {
+  color: white;
+  transform: scale(1.05);
+  z-index: 2;
 }
 
-.vision-box:nth-child(3) {
-    background-color: #5b708a; /* 약간 더 밝고 부드러운 블루그레이 */
+/* Vision Title */
+.vision-front {
+  font-size: 1.2rem;
+  padding: 10px;
+  transition: opacity 0.3s;
 }
 
-.vision-box:nth-child(4) {
-    background-color: #b0c4d8; /* 밝고 가벼운 느낌의 블루그레이 */
+/* Vision 설명 */
+.vision-back {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  padding: 20px 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  font-size: 0.9rem;
+  line-height: 1.4;
+  text-align: center;
+  transition: opacity 0.3s;
 }
 
-
-/* 비전 제목 스타일 */
-.vision-title {
-    font-size: 2rem;
-    font-weight: bold;
-    margin-bottom: 10px;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
+/* Hover 시 전환 */
+.vision-circle:hover .vision-front {
+  opacity: 0;
+}
+.vision-circle:hover .vision-back {
+  opacity: 1;
 }
 
-/* 비전 설명 스타일 */
-.vision-scription {
-    font-size: 1.2rem;
-    line-height: 1.5;
-    /* background: rgba(0, 0, 0, 0.5); */
-    padding: 10px 15px;
-    border-radius: 10px;
+/* Hover 시에만 컬러 발동 – 채도 높고 선명한 색 */
+.vision1:hover {
+  background-color: #FF6B6B;  /* Coral Red */
 }
-
-/* 중앙 원형 숫자 */
-/* 중앙 원형 숫자를 왼쪽 상단으로 이동 */
-.vision-number {
-    position: absolute;
-    top: 10px;
-    left: 10px;
-    width: 50px;
-    height: 50px;
-    background-color: rgba(0, 0, 0, 0.7);
-    color: white;
-    font-size: 1.5rem;
-    font-weight: bold;
-    border-radius: 50%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    z-index: 2;
+.vision2:hover {
+  background-color: #FFA931;  /* Bright Orange */
+}
+.vision3:hover {
+  background-color: #45C4F9;  /* Sky Blue */
+}
+.vision4:hover {
+  background-color: #B57EDC;  /* Vivid Purple */
+  color: white; /* 밝은 배경이라도 white로 유지 */
 }
