@@ -15,44 +15,52 @@
     <div id="header"></div>  <!-- 공통 헤더 로드됨 -->
 
     <section class="naverMap">
-      <div class="container">
-        <!-- 제목 영역 -->
-        <div class="title-area">
-          <span class="material-symbols-outlined">map</span>
-          <h1>오시는 길</h1>
-        </div>
+  <div class="container">
     
-        <!-- 내용 영역 -->
-        <div class="content-area">
-          <div class="info-area">
-            <div class="info-box">
-              <p><span>LOCATION</span></p>
-              <h2>고향장로교회</h2>
-              <p><strong>주소:</strong> 서울특별시 관악구 호암로26가길 8</p>
-              <p><span>서울대벤처타운역 도보 3분 거리</span></p>
-              <p><strong>TEL</strong>02-872-0788</p>
-              <p><strong>FAX</strong>02-872-5729</p>
-            </div>
-          </div>
-          <div class="map-area" id="map"></div>
+    <!-- 구절 추가 -->
+    <div class="verse-intro">
+      <p class="verse-line">“Come to me, all you who are weary and burdened.”</p>
+      <p class="verse-source">— Matthew 11:28</p>
+    </div>
+
+    <!-- 기존 content-area -->
+    <div class="content-area">
+      <!-- 왼쪽 info-area -->
+      <div class="info-area">
+        <div class="info-box">
+          <h1>오시는 길</h1>
+          <h2>고향장로교회</h2>
+          <p><strong>주소:</strong> 서울특별시 관악구 호암로26가길 8</p>
+          <p>서울대벤처타운역 도보 3분 거리</p>
+          <p><strong>TEL</strong> 02-872-0788</p>
+          <p><strong>FAX</strong> 02-872-5729</p>
         </div>
       </div>
-    
-      <!-- 네이버 지도 API -->
-      <script type="text/javascript" src="https://openapi.map.naver.com/openapi/v3/maps.js?ncpClientId=5l9vh7sjrh"></script>
-      <script>
-        var mapDiv = document.getElementById('map');
-        var map = new naver.maps.Map(mapDiv, {
-          zoom: 17,
-          center: new naver.maps.LatLng(37.470476, 126.933935),
-        });
-    
-        var marker = new naver.maps.Marker({
-		    position: new naver.maps.LatLng(37.470476, 126.933935),
-		    map: map
-		});
-      </script>
-    </section>
+
+      <!-- 오른쪽 map-area-wrapper -->
+      <div class="map-area-wrapper">
+        <div class="map-area" id="map"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 네이버 지도 스크립트 -->
+  <script type="text/javascript" src="https://openapi.map.naver.com/openapi/v3/maps.js?ncpClientId=5l9vh7sjrh"></script>
+  <script>
+    var map = new naver.maps.Map('map', {
+      zoom: 17,
+      center: new naver.maps.LatLng(37.470476, 126.933935),
+    });
+
+    new naver.maps.Marker({
+      position: new naver.maps.LatLng(37.470476, 126.933935),
+      map: map,
+    });
+  </script>
+</section>
+
+
+
 
     <div id="footer"></div>  <!-- 공통 푸터 로드됨 -->
 

@@ -10,7 +10,6 @@
     
     <link rel="stylesheet" type="text/css" href="css/style.css">
     <link rel="stylesheet" type="text/css" href="css/index.css">
-    <link rel="stylesheet" type="text/css" href="css/popup.css">
     <script src="script.js" defer></script>
     <script src="include.js" defer></script>
     <script src="js/popup.js" defer></script>
@@ -18,17 +17,7 @@
 </head>
 <body>
   <div id="header"></div>
-    <!--팝ㅇ업-->
-  <div id="popup">
-    <img src="img/travel.png" alt="공지 이미지">
-    <div class="popup-footer">
-        <label>
-          <input type="checkbox" id="dontShowToday"> 하루동안 보지 않기
-        </label>
-        <button onclick="closePopup()">닫기</button>
-      </div>
-  </div>
-  
+    
     <!--슬라이드 -->
     <section>
       <div class="slideshow-container">
@@ -62,12 +51,12 @@
         <section class="intro">
             <div class="intro-title">
                 <p>intro</p>
-                <h3>A church full of emotion</h3>
+                <h3>A Church That Pleases God</h3>
             </div>
             <div class="intro-scription">
                 <img src="img/gohyang_ch07.png" alt="">
                 <div class="scription-text">
-                    <p>We are building a new campus. Help bring heaven to earth and invest in the future. We are building a new campus. Help bring heaven to earth and invest in the future.We are building a new campus. Help bring heaven to earth and invest in the future. We are building a new campus. Help bring heaven to earth and invest in the future.</p>
+                    <p>대한예수교장로회 소속으로 영락교회,소망교회,새문안교회와 같은 통합측 교회입니다. 고향교회는 교회 전통과 성경중심의 복음주의에 충실하여 지역사회를 섬기면서 오늘에 이르고 있습니다. 신림뉴타운 안에 진행되고 있는 새로운 성전 건축과 함께 온 교우들이 제 2의 성장과 부흥을 향해 힘차게 기도하며 나아가고 있으며, 현재 지역 재개발로 인해 신림 9동에 있는 구동성전으로 자리를 옮겨 지역사회를 더 깊이 섬기기 위해 노력하고 있습니다.</p>
 
                     <a href="vision.html"><button>Learn More</button></a>
                 </div>
@@ -79,7 +68,7 @@
             <div class="build-scription">
                 <p>FUTURE CAMPUS</p>
                 <h3>Arise & Rebuild</h3>
-                <p>We are building a new campus. help bring heaven to earth<br> and invest in the future.</p>
+                <p>신림뉴타운 안에 진행되고 있는 새로운 성전건축을 향해<br> 힘차게 기도하며 나아가고 있습니다</p>
                 <a href="rebuild.html"><button>Learn More</button></a>
             </div>
             <div class="bulid-img">
@@ -90,34 +79,40 @@
 
 
         <!--중간 세션 -->
-        <section class="holiday">
-            <div class="holiday-title">
-                <p>information</p>
+        <section class="gallery">
+            <div class="gallery-title">
                 <h3>info & news</h3>
             </div>
-            <div class="holiday-img-box">
-                <div class="holiday-img">
-                    <a href="https://www.youtube.com/watch?v=UZq7j4f1wpY" target="_blank"><img src="img/Thumbnail.png" alt=""></a>
-                </div>
-                <div class="holiday-img">
-                    <a href="#" target="_blank"><img src="img/newTown.png" alt=""></a>
-                </div>
-                <div class="holiday-img">
-                    <a href="worship-information.html" target="_blank"><img src="img/worshipinformaiton.png" alt=""></a>
-                </div>
-            </div>
-        </section>
+  <div class="gallery-box" style="background-position: 0% 0%;">
+    <a href="worship.html"><div class="overlay">주일설교 바로가기</div></a>
+  </div>
+  <div class="gallery-box" style="background-position: 20% 0%;">
+    <a href="rebuild.html"><div class="overlay">새성전 바로가기</div></a>
+  </div>
+  <div class="gallery-box" style="background-position: 40% 0%;">
+    <a href="vision.html"><div class="overlay">인사말 바로가기</div></a>
+  </div>
+  <div class="gallery-box" style="background-position: 60% 0%;">
+    <a href="profile.html"><div class="overlay">교역자 바로가기</div></a>
+  </div>
+  <div class="gallery-box" style="background-position: 80% 0%;">
+    <a href="worship-information.html"><div class="overlay">예배순서 바로가기</div></a>
+  </div>
+  <div class="gallery-box" style="background-position: 100% 0%;">
+    <a href="location.html"><div class="overlay">오는길 바로가기</div></a>
+  </div>
+</section>
         
 
 
 
         <!--중간 세션-->
         <section class="direct">
-          <a href="#" class="direct-box">
+          <a href="vision.html" class="direct-box">
               <div class="icon-wrapper">
                   <span class="material-symbols-outlined">home</span>
               </div>
-              <h3>새가족 안내</h3>
+              <h3>Welcome</h3>
               <p>저희 교회가 처음이신가요?</p>
               <p>친절하게 안내해드리겠습니다.</p>
           </a>
@@ -125,14 +120,14 @@
               <div class="icon-wrapper">
                   <span class="material-symbols-outlined">ondemand_video</span>
               </div>
-              <h3>고향교회 유튜브</h3>
+              <h3>Youtube</h3>
               <p>온라인으로 함께 예배드려요!</p>
           </a>
           <a href="location.html" class="direct-box">
               <div class="icon-wrapper">
                   <span class="material-symbols-outlined">map</span>
               </div>
-              <h3>오시는 길</h3>
+              <h3>Visit Us</h3>
               <p>저희 교회 오시는 길 안내입니다.</p>
           </a>
       </section>
